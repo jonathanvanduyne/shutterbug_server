@@ -1,4 +1,4 @@
 from django.db import models
 
-class tag(models.Model):
+class Tag(models.Model):
     label = models.CharField(max_length=100)
