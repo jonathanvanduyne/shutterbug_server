@@ -1,0 +1,98 @@
+[
+    {
+        "model": "shutterbugapi.comment",
+        "pk": 1,
+        "fields": {
+            "post": 1,
+            "shutterbug_user": 1,
+            "content": "Wow, so pretty",
+            "published_on": "2019-07-27",
+            "flagged": false,
+            "approved": true
+        }
+    },
+    {
+        "model": "shutterbugapi.comment",
+        "pk": 2,
+        "fields": {
+            "post": 2,
+            "shutterbug_user": 1,
+            "content": "I wish I could take photos like this",
+            "published_on": "2019-07-27",
+            "flagged": false,
+            "approved": true
+        }
+    },
+    {
+        "model": "shutterbugapi.comment",
+        "pk": 3,
+        "fields": {
+            "post": 3,
+            "shutterbug_user": 1,
+            "content": "You are an artist",
+            "published_on": "2019-07-27",
+            "flagged": false,
+            "approved": true
+        }
+    },
+    {
+        "model": "shutterbugapi.comment",
+        "pk": 4,
+        "fields": {
+            "post": 4,
+            "shutterbug_user": 1,
+            "content": "Truly amazing",
+            "published_on": "2019-07-27",
+            "flagged": false,
+            "approved": true
+        }
+    },
+    {
+        "model": "shutterbugapi.comment",
+        "pk": 5,
+        "fields": {
+            "post": 1,
+            "shutterbug_user": 2,
+            "content": "I love this photo",
+            "published_on": "2019-07-27",
+            "flagged": false,
+            "approved": true
+        }
+    },
+    {
+        "model": "shutterbugapi.comment",
+        "pk": 6,
+        "fields": {
+            "post": 2,
+            "shutterbug_user": 2,
+            "content": "You inspire me",
+            "published_on": "2019-07-27",
+            "flagged": false,
+            "approved": true
+        }
+    },
+    {
+        "model": "shutterbugapi.comment",
+        "pk": 7,
+        "fields": {
+            "post": 3,
+            "shutterbug_user": 2,
+            "content": "How do you do it?",
+            "published_on": "2019-07-27",
+            "flagged": false,
+            "approved": true
+        }
+    },
+    {
+        "model": "shutterbugapi.comment",
+        "pk": 8,
+        "fields": {
+            "post": 4,
+            "shutterbug_user": 2,
+            "content": "To say I'm impressed would be an understatement",
+            "published_on": "2019-07-27",
+            "flagged": false,
+            "approved": true
+        }
+    }
+]

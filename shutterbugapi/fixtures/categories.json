@@ -1,0 +1,79 @@
+[
+    {
+        "model": "shutterbugapi.category",
+        "pk": 1,
+        "fields": {
+            "label": "Health"
+        }
+    },
+    {
+        "model": "shutterbugapi.category",
+        "pk": 2,
+        "fields": {
+            "label": "Sports"
+        }
+    },
+    {
+        "model": "shutterbugapi.category",
+        "pk": 3,
+        "fields": {
+            "label": "Technology"
+        }
+    },
+    {
+        "model": "shutterbugapi.category",
+        "pk": 4,
+        "fields": {
+            "label": "Science"
+        }
+    },
+    {
+        "model": "shutterbugapi.category",
+        "pk": 5,
+        "fields": {
+            "label": "Business"
+        }
+    },
+    {
+        "model": "shutterbugapi.category",
+        "pk": 6,
+        "fields": {
+            "label": "Entertainment"
+        }
+    },
+    {
+        "model": "shutterbugapi.category",
+        "pk": 7,
+        "fields": {
+            "label": "Politics"
+        }
+    },
+    {
+        "model": "shutterbugapi.category",
+        "pk": 8,
+        "fields": {
+            "label": "Opinion"
+        }
+    },
+    {
+        "model": "shutterbugapi.category",
+        "pk": 9,
+        "fields": {
+            "label": "Education"
+        }
+    },
+    {
+        "model": "shutterbugapi.category",
+        "pk": 10,
+        "fields": {
+            "label": "Food"
+        }
+    },
+    {
+        "model": "shutterbugapi.category",
+        "pk": 11,
+        "fields": {
+            "label": "Food"
+        }
+    }
+]

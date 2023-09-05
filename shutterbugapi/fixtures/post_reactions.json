@@ -1,0 +1,74 @@
+[
+    {
+        "model": "shutterbugapi.postreaction",
+        "pk": 1,
+        "fields": {
+            "shutterbug_user": 1,
+            "post": 1,
+            "reaction": 1
+        }
+    },
+    {
+        "model": "shutterbugapi.postreaction",
+        "pk": 2,
+        "fields": {
+            "shutterbug_user": 1,
+            "post": 2,
+            "reaction": 2
+        }
+    },
+    {
+        "model": "shutterbugapi.postreaction",
+        "pk": 3,
+        "fields": {
+            "shutterbug_user": 1,
+            "post": 3,
+            "reaction": 3
+        }
+    },
+    {
+        "model": "shutterbugapi.postreaction",
+        "pk": 4,
+        "fields": {
+            "shutterbug_user": 1,
+            "post": 4,
+            "reaction": 4
+        }
+    },
+    {
+        "model": "shutterbugapi.postreaction",
+        "pk": 5,
+        "fields": {
+            "shutterbug_user": 2,
+            "post": 1,
+            "reaction": 5
+        }
+    },
+    {
+        "model": "shutterbugapi.postreaction",
+        "pk": 6,
+        "fields": {
+            "shutterbug_user": 2,
+            "post": 2,
+            "reaction": 6
+        }
+    },
+    {
+        "model": "shutterbugapi.postreaction",
+        "pk": 7,
+        "fields": {
+            "shutterbug_user": 2,
+            "post": 3,
+            "reaction": 1
+        }
+    },
+    {
+        "model": "shutterbugapi.postreaction",
+        "pk": 8,
+        "fields": {
+            "shutterbug_user": 2,
+            "post": 4,
+            "reaction": 2
+        }
+    }
+]

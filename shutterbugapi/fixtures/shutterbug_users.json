@@ -1,0 +1,20 @@
+[
+    {
+        "model": "shutterbugapi.shutterbuguser",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "bio": "I may be as old as the hills, but I'm still hip!",
+            "profile_image_url": "https://ca.slack-edge.com/T03F2SDTJ-U04QYTUSV5Y-73dc6d984cf6-512"
+        }
+    },
+    {
+        "model": "shutterbugapi.shutterbuguser",
+        "pk": 2,
+        "fields": {
+            "user": 2,
+            "bio": "Gen Z isn't all bad #GenZ4Life",
+            "profile_image_url": "https://media.licdn.com/dms/image/D5635AQFDkTpv1pTS7g/profile-framedphoto-shrink_200_200/0/1689816090102?e=1694545200&v=beta&t=TFWhexOQFKx5O1M03FFgLH_oWNYl58QpOtl4HlIqTpk"
+        }
+    }
+]

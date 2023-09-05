@@ -1,0 +1,50 @@
+[
+    {
+        "model": "shutterbugapi.reaction",
+        "pk": 1,
+        "fields": {
+            "label": "Like",
+            "image_url": "https://www.nicepng.com/png/detail/32-324680_like-emoji-smiley-face-thumbs-up.png"
+        }
+    },
+    {
+        "model": "shutterbugapi.reaction",
+        "pk": 2,
+        "fields": {
+            "label": "Dislike",
+            "image_url": "https://static.vecteezy.com/system/resources/previews/010/228/299/original/cartoon-emoticon-dislike-vector.jpg"
+        }
+    },
+    {
+        "model": "shutterbugapi.reaction",
+        "pk": 3,
+        "fields": {
+            "label": "Heart",
+            "image_url": "https://www.i2symbol.com/pictures/emojis/2/d/2/0/2d20d385119ed204dbf757151de0a1c9.png"
+        }
+    },
+    {
+        "model": "shutterbugapi.reaction",
+        "pk": 4,
+        "fields": {
+            "label": "Laugh",
+            "image_url": "https://png.pngtree.com/png-vector/20210117/ourmid/pngtree-3d-laugh-emoji-emoticon-png-vector-clipart-transparant-background-png-image_2762333.jpg"
+        }
+    },
+    {
+        "model": "shutterbugapi.reaction",
+        "pk": 5,
+        "fields": {
+            "label": "Sad",
+            "image_url": "https://freepngimg.com/thumb/sad_emoji/36807-4-sad-emoji-clipart.png"
+        }
+    },
+    {
+        "model": "shutterbugapi.reaction",
+        "pk": 6,
+        "fields": {
+            "label": "Angry",
+            "image_url": "https://freepngimg.com/thumb/emoji/102696-gradient-angry-emoji-free-download-image.png"
+        }
+    }
+]

@@ -1,0 +1,98 @@
+[
+    {
+        "model": "shutterbugapi.comment",
+        "pk": 1,
+        "fields": {
+            "post": 1,
+            "shutterbug_user" : 1,
+            "content": "You have excellent taste.",
+            "published_on": "2020-08-05T14:48:00Z",
+            "flagged": false,
+            "approved": true
+        }
+    },
+    {
+        "model": "shutterbugapi.comment",
+        "pk": 2,
+        "fields": {
+            "post": 1,
+            "shutterbug_user" : 2,
+            "content": "That seems to be some shameless self promotion.",
+            "published_on": "2020-08-05T14:48:00Z",
+            "flagged": false,
+            "approved": true
+        }
+    },
+    {
+        "model": "shutterbugapi.comment",
+        "pk": 3,
+        "fields": {
+            "post": 2,
+            "shutterbug_user" : 1,
+            "content": "I'm so glad I got to see this.",
+            "published_on": "2020-08-05T14:48:00Z",
+            "flagged": false,
+            "approved": true
+        }
+    },
+    {
+        "model": "shutterbugapi.comment",
+        "pk": 4,
+        "fields": {
+            "post": 2,
+            "shutterbug_user" : 2,
+            "content": "Again, please stop complimenting your own work.",
+            "published_on": "2020-08-05T14:48:00Z",
+            "flagged": false,
+            "approved": true
+        }
+    },
+    {
+        "model": "shutterbugapi.comment",
+        "pk": 5,
+        "fields": {
+            "post": 3,
+            "shutterbug_user" : 1,
+            "content": "Ehh, it's ok I guess.",
+            "published_on": "2020-08-05T14:48:00Z",
+            "flagged": false,
+            "approved": true
+        }
+    },
+    {
+        "model": "shutterbugapi.comment",
+        "pk": 6,
+        "fields": {
+            "post": 3,
+            "shutterbug_user" : 2,
+            "content": "You sir are no friend of the arts.",
+            "published_on": "2020-08-05T14:48:00Z",
+            "flagged": false,
+            "approved": true
+        }
+    },
+    {
+        "model": "shutterbugapi.comment",
+        "pk": 7,
+        "fields": {
+            "post": 4,
+            "shutterbug_user" : 1,
+            "content": "What the heck is this supposed to be?",
+            "published_on": "2020-08-05T14:48:00Z",
+            "flagged": false,
+            "approved": true
+        }
+    },
+    {
+        "model": "shutterbugapi.comment",
+        "pk": 7,
+        "fields": {
+            "post": 4,
+            "shutterbug_user" : 1,
+            "content": "Mountains, duh",
+            "published_on": "2020-08-05T14:48:00Z",
+            "flagged": false,
+            "approved": true
+        }
+    }
+]

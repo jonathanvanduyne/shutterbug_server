@@ -1,0 +1,72 @@
+[
+    {
+        "model": "shutterbugapi.tag",
+        "pk": 1,
+        "fields": {
+            "label": "Daniel"
+        }
+    },
+    {
+        "model": "shutterbugapi.tag",
+        "pk": 2,
+        "fields": {
+            "label": "Sports"
+        }
+    },
+    {
+        "model": "shutterbugapi.tag",
+        "pk": 3,
+        "fields": {
+            "label": "Barbie"
+        }
+    },
+    {
+        "model": "shutterbugapi.tag",
+        "pk": 4,
+        "fields": {
+            "label": "Bacon"
+        }
+    },
+    {
+        "model": "shutterbugapi.tag",
+        "pk": 5,
+        "fields": {
+            "label": "LifeStyle"
+        }
+    },
+    {
+        "model": "shutterbugapi.tag",
+        "pk": 6,
+        "fields": {
+            "label": "Dink & Dunk"
+        }
+    },
+    {
+        "model": "shutterbugapi.tag",
+        "pk": 7,
+        "fields": {
+            "label": "Shama-lama-ding-dong"
+        }
+    },
+    {
+        "model": "shutterbugapi.tag",
+        "pk": 8,
+        "fields": {
+            "label": "People, Places, Things"
+        }
+    },
+    {
+        "model": "shutterbugapi.tag",
+        "pk": 9,
+        "fields": {
+            "label": "Who the heck is Dustin?"
+        }
+    },
+    {
+        "model": "shutterbugapi.tag",
+        "pk": 10,
+        "fields": {
+            "label": "Egg"
+        }
+    }
+]

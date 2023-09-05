@@ -1,0 +1,58 @@
+[
+    {
+        "model": "shutterbugapi.post",
+        "pk": 1,
+        "fields": {
+            "shutterbug_user": 1,
+            "title": "Desert",
+            "image_url": "https://images.unsplash.com/photo-1488197047962-b48492212cda?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1734&q=80",
+            "content": "One might call this a hot day",
+            "published_on": "2020-06-01",
+            "category": 6,
+            "approved": true,
+            "flagged": false
+        }
+    },
+    {
+        "model": "shutterbugapi.post",
+        "pk": 2,
+        "fields": {
+            "shutterbug_user": 1,
+            "title": "Lightning",
+            "image_url": "https://images.unsplash.com/photo-1516912481808-3406841bd33c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1944&q=80",
+            "content": "Storm Chaser",
+            "published_on": "2020-06-01",
+            "category": 11,
+            "approved": true,
+            "flagged": false
+        }
+    },
+    {
+        "model": "shutterbugapi.post",
+        "pk": 3,
+        "fields": {
+            "shutterbug_user": 2,
+            "title": "Beach",
+            "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1746&q=80",
+            "content": "Beach Relaxer",
+            "published_on": "2020-06-01",
+            "category": 10,
+            "approved": true,
+            "flagged": false
+        }
+    },
+    {
+        "model": "shutterbugapi.post",
+        "pk": 4,
+        "fields": {
+            "shutterbug_user": 2,
+            "title": "Mountains",
+            "image_url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+            "content": "Mountain Hiker",
+            "published_on": "2020-06-01",
+            "category": 9,
+            "approved": true,
+            "flagged": false
+        }
+    }
+]
