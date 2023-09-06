@@ -26,23 +26,38 @@ class PostView(ViewSet):
     
     def create(self, request):
         """Handle POST operations """
-        user = ShutterbugUser.objects.get(user=request.auth.user)
-        category = Category.objects.get(pk=request.data["category"])
+        try:
+            # Get the user from the request's authentication
+            user = ShutterbugUser.objects.get(user=request.auth.user)
+        
+            # Get the category using the provided category ID
+            category = Category.objects.get(pk=request.data["category"])
 
-        post = Post.objects.create(
-            user=user,
-            title=request.data["title"],
-            image_url=request.data["image_url"],
-            content=request.data["content"],
-            published_on=request.data["published_on"],
-            category=category,
-            approved=request.data["approved"],
-            flagged=request.data["flagged"]
-        )
+            # Create a new Post instance with the provided data
+            post = Post.objects.create(
+                shutterbug_user=user,
+                title=request.data["title"],
+                image_url=request.data["image_url"],
+                content=request.data["content"],
+                published_on=request.data["published_on"],
+                category=category,
+                approved=request.data["approved"],
+                flagged=request.data["flagged"]
+            )
 
-        serializer = PostSerializer(post)
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
-    
+            # Serialize the newly created post and return it with a 201 status
+            serializer = PostSerializer(post)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+        except ShutterbugUser.DoesNotExist:
+            return Response({'message': 'User not found.'}, status=status.HTTP_404_NOT_FOUND)
+
+        except Category.DoesNotExist:
+            return Response({'message': 'Category not found.'}, status=status.HTTP_404_NOT_FOUND)
+
+        except Exception as ex:
+            return Response({'message': str(ex)}, status=status.HTTP_400_BAD_REQUEST)
+
     def destroy(self, request, pk):
         """Handle DELETE requests for a single post"""
         try:
@@ -56,74 +71,65 @@ class PostView(ViewSet):
         
     def update(self, request, pk):
         """Handle PUT requests for a post"""
-        user = ShutterbugUser.objects.get(user=request.auth.user)
-        category = Category.objects.get(pk=request.data["category"])
+        try:
+            user = ShutterbugUser.objects.get(user=request.auth.user)
+            category = Category.objects.get(pk=request.data["category"])
 
-        post = Post.objects.get(pk=pk)
-        post.user = user
-        post.title = request.data["title"]
-        post.image_url = request.data["image_url"]
-        post.content = request.data["content"]
-        post.published_on = request.data["published_on"]
-        post.category = category
-        post.approved = request.data["approved"]
-        post.flagged = request.data["flagged"]
-        post.save()
+            post = Post.objects.get(pk=pk)
+            post.shutterbug_user = user
+            post.title = request.data["title"]
+            post.image_url = request.data["image_url"]
+            post.content = request.data["content"]
+            post.published_on = request.data["published_on"]
+            post.category = category
+            post.approved = request.data["approved"]
+            post.flagged = request.data["flagged"]
+            post.save()
 
-        return Response(None, status=status.HTTP_204_NO_CONTENT)
-    
+            return Response(None, status=status.HTTP_204_NO_CONTENT)
 
+        except ShutterbugUser.DoesNotExist:
+            return Response({'message': 'User not found.'}, status=status.HTTP_404_NOT_FOUND)
 
-class ShutterbugUserSerializer(serializers.ModelSerializer):
-    """JSON serializer for users"""
-    class Meta:
-        model = ShutterbugUser
-        fields = ('id', 'user', 'bio', 'profile_image_url')
+        except Category.DoesNotExist:
+            return Response({'message': 'Category not found.'}, status=status.HTTP_404_NOT_FOUND)
 
-        depth = 1
+        except Post.DoesNotExist:
+            return Response({'message': 'Post not found.'}, status=status.HTTP_404_NOT_FOUND)
+
+        except Exception as ex:
+            return Response({'message': str(ex)}, status=status.HTTP_400_BAD_REQUEST)
 
 class CategorySerializer(serializers.ModelSerializer):
     """JSON serializer for categories"""
+
     class Meta:
         model = Category
-        fields = ('label')
+        fields = ('label',)
+
 
 class TagSerializer(serializers.ModelSerializer):
     """JSON serializer for tags"""
+
     class Meta:
-        model = PostTag
-        fields = ('label')
-
-        depth = 1
-
-class CommentSerializer(serializers.ModelSerializer):
-    """JSON serializer for comments"""
-    class Meta:
-        model = Comment
-        fields = ('shutterbug_user', 'content', 'created_on')
-
-        depth = 1
+        model = Tag
+        fields = ('label',)
 
 class ReactionSerializer(serializers.ModelSerializer):
     """JSON serializer for reactions"""
-    class Meta:
-        model = PostReaction
-        fields = ('shutterbug_user', 'reaction_type')
 
-        depth = 1
+    class Meta:
+        model = Reaction
+        fields = ('label', 'image_url')
 
 class PostSerializer(serializers.ModelSerializer):
     """JSON serializer for posts"""
 
-    shutterbug_user = ShutterbugUserSerializer(many=False)
     category = CategorySerializer(many=False)
     tags = TagSerializer(many=True)
-    comments = CommentSerializer(many=True)
     reactions = ReactionSerializer(many=True)
-
 
     class Meta:
         model = Post
-        fields = ('id', 'shutterbug_user', 'title', 'image_url', 'content', 'published_on', 'category', 'tags', 'comments', 'reactions', 'approved', 'flagged')
-
+        fields = ('id', 'shutterbug_user', 'title', 'image_url', 'content', 'published_on', 'category', 'tags', 'reactions', 'approved', 'flagged')
         depth = 1
