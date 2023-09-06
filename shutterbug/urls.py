@@ -17,12 +17,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
-from shutterbugapi.views import PostView
+from shutterbugapi.views import PostView, ShutterbugUserView, CommentView
+from shutterbugapi.views import login_user, register_user
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'posts', PostView, 'post')
+router.register(r'users', ShutterbugUserView, 'shutterbuguser')
+router.register(r'comments', CommentView, 'comment')
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('register', register_user),
+    path('login', login_user),
     path('admin/', admin.site.urls),
 ]
