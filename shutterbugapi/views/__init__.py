@@ -1,1 +1,4 @@
+from .auth import login_user, register_user
 from .post_view import PostView
+from .shutterbug_user_view import ShutterbugUserView
+from .comment_view import CommentView
