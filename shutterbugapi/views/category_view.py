@@ -13,27 +13,33 @@ class CategoryView(ViewSet):
         categories = Category.objects.all()
         serializer = CategorySerializer(categories, many=True, context={'request': request})
         return Response(serializer.data)
-    
+
     def retrieve(self, request, pk):
         """Handle GET requests for a single category"""
         try:
             category = Category.objects.get(pk=pk)
             serializer = CategorySerializer(category)
             return Response(serializer.data)
-        
+
         except Category.DoesNotExist:
             return Response({'message': 'Category not found.'}, status=status.HTTP_404_NOT_FOUND)
-        
+
+        except Exception as ex:
+            return Response({'message': str(ex)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
     def create(self, request):
-        """Handle POST operations """
+        """Handle POST operations"""
         try:
             # Get the user from the request's authentication
             user = ShutterbugUser.objects.get(user=request.auth.user)
 
+            # Validate the label field
+            label = request.data.get("label")
+            if not label:
+                return Response({'message': 'Label is required.'}, status=status.HTTP_400_BAD_REQUEST)
+
             # Create a new Category instance with the provided data
-            category = Category.objects.create(
-                label=request.data["label"]
-            )
+            category = Category.objects.create(label=label)
 
             # Serialize the newly created category and return it with a 201 status
             serializer = CategorySerializer(category)
@@ -43,8 +49,8 @@ class CategoryView(ViewSet):
             return Response({'message': 'User not found.'}, status=status.HTTP_404_NOT_FOUND)
 
         except Exception as ex:
-            return Response({'message': str(ex)}, status=status.HTTP_400_BAD_REQUEST)
-        
+            return Response({'message': str(ex)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
     def update(self, request, pk):
         """Handle PUT requests for a category"""
         try:
@@ -54,8 +60,13 @@ class CategoryView(ViewSet):
             # Get the category using the provided category ID
             category = Category.objects.get(pk=pk)
 
+            # Validate the label field
+            label = request.data.get("label")
+            if not label:
+                return Response({'message': 'Label is required.'}, status=status.HTTP_400_BAD_REQUEST)
+
             # Update the category with the provided data
-            category.label = request.data["label"]
+            category.label = label
             category.save()
 
             # Return an empty response body and a 204 status
@@ -68,8 +79,8 @@ class CategoryView(ViewSet):
             return Response({'message': 'Category not found.'}, status=status.HTTP_404_NOT_FOUND)
 
         except Exception as ex:
-            return Response({'message': str(ex)}, status=status.HTTP_400_BAD_REQUEST)
-        
+            return Response({'message': str(ex)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
     def destroy(self, request, pk):
         """Handle DELETE requests for a category"""
         try:
@@ -90,15 +101,12 @@ class CategoryView(ViewSet):
             return Response({'message': 'Category not found.'}, status=status.HTTP_404_NOT_FOUND)
 
         except Exception as ex:
-            return Response({'message': str(ex)}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'message': str(ex)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class CategorySerializer(serializers.ModelSerializer):
-    """JSON serializer for categories
+    """JSON serializer for categories"""
 
-    Arguments:
-        serializer type
-    """
     class Meta:
         model = Category
         fields = ('id', 'label')

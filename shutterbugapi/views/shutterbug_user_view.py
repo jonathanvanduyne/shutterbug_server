@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from shutterbugapi.models import ShutterbugUser
 
 class ShutterbugUserView(ViewSet):
-
+    """Handles requests for shutterbug users"""
     def list(self, request):
         """Handle GET requests to shutterbug users resource"""
         try:

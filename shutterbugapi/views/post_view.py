@@ -122,8 +122,15 @@ class ReactionSerializer(serializers.ModelSerializer):
         model = Reaction
         fields = ('label', 'image_url')
 
+
 class PostSerializer(serializers.ModelSerializer):
     """JSON serializer for posts"""
+
+    # Define fields for User model properties
+    user_first_name = serializers.CharField(source='shutterbug_user.user.first_name', read_only=True)
+    user_last_name = serializers.CharField(source='shutterbug_user.user.last_name', read_only=True)
+    user_full_name = serializers.CharField(source='shutterbug_user.full_name', read_only=True)
+    user_email = serializers.EmailField(source='shutterbug_user.user.email', read_only=True)
 
     category = CategorySerializer(many=False)
     tags = TagSerializer(many=True)
@@ -131,5 +138,5 @@ class PostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = ('id', 'shutterbug_user', 'full_name', 'title', 'image_url', 'content', 'published_on', 'category', 'tags', 'reactions', 'approved', 'flagged')
+        fields = ('id', 'shutterbug_user', 'user_first_name', 'user_last_name', 'user_full_name', 'user_email', 'title', 'image_url', 'content', 'published_on', 'category', 'tags', 'reactions', 'approved', 'flagged')
         depth = 1

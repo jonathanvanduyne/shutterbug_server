@@ -73,7 +73,7 @@
         "model": "shutterbugapi.category",
         "pk": 11,
         "fields": {
-            "label": "Food"
+            "label": "Weather"
         }
     }
 ]
