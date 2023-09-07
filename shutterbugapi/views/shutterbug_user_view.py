@@ -11,6 +11,10 @@ class ShutterbugUserView(ViewSet):
         """Handle GET requests to shutterbug users resource"""
         try:
             users = ShutterbugUser.objects.all()
+            
+            if "current" in request.query_params:
+                users = users.filter(user=request.auth.user)
+            
             serializer = ShutterbugUserSerializer(users, many=True, context={'request': request})
             return Response(serializer.data)
 

@@ -17,7 +17,7 @@
         "model": "shutterbugapi.post",
         "pk": 2,
         "fields": {
-            "shutterbug_user": 1,
+            "shutterbug_user": 2,
             "title": "Lightning",
             "image_url": "https://images.unsplash.com/photo-1516912481808-3406841bd33c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1944&q=80",
             "content": "Storm Chaser",
@@ -31,7 +31,7 @@
         "model": "shutterbugapi.post",
         "pk": 3,
         "fields": {
-            "shutterbug_user": 2,
+            "shutterbug_user": 5,
             "title": "Beach",
             "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1746&q=80",
             "content": "Beach Relaxer",
@@ -45,7 +45,7 @@
         "model": "shutterbugapi.post",
         "pk": 4,
         "fields": {
-            "shutterbug_user": 2,
+            "shutterbug_user": 6,
             "title": "Mountains",
             "image_url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
             "content": "Mountain Hiker",
