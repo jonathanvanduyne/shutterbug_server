@@ -4,8 +4,8 @@
         "pk": 1,
         "fields": {
             "user": 1,
-            "bio": "I may be as old as the hills, but I'm still hip!",
-            "profile_image_url": "https://ca.slack-edge.com/T03F2SDTJ-U04QYTUSV5Y-73dc6d984cf6-512"
+            "bio": "Gen Z isn't all bad #GenZ4Life",
+            "profile_image_url": "https://media.licdn.com/dms/image/D5635AQFDkTpv1pTS7g/profile-framedphoto-shrink_200_200/0/1689816090102?e=1694545200&v=beta&t=TFWhexOQFKx5O1M03FFgLH_oWNYl58QpOtl4HlIqTpk"
         }
     },
     {
@@ -13,8 +13,44 @@
         "pk": 2,
         "fields": {
             "user": 2,
+            "bio": "I love Cats, cats, cat, catz, and cats.",
+            "profile_image_url": "https://ca.slack-edge.com/T03F2SDTJ-U0402BKQP88-1b4352fa8c3f-512"
+        }
+    },
+    {
+        "model": "shutterbugapi.shutterbuguser",
+        "pk": 3,
+        "fields": {
+            "user": 3,
+            "bio": "TBD",
+            "profile_image_url": "https://ca.slack-edge.com/T03F2SDTJ-U04TAPH9H9B-061323637bf7-512"
+        }
+    },
+    {
+        "model": "shutterbugapi.shutterbuguser",
+        "pk": 4,
+        "fields": {
+            "user": 4,
             "bio": "Gen Z isn't all bad #GenZ4Life",
             "profile_image_url": "https://media.licdn.com/dms/image/D5635AQFDkTpv1pTS7g/profile-framedphoto-shrink_200_200/0/1689816090102?e=1694545200&v=beta&t=TFWhexOQFKx5O1M03FFgLH_oWNYl58QpOtl4HlIqTpk"
+        }
+    },
+    {
+        "model": "shutterbugapi.shutterbuguser",
+        "pk": 5,
+        "fields": {
+            "user": 5,
+            "bio": "Board games are my life, also I hate Daniel",
+            "profile_image_url": "https://ca.slack-edge.com/T03F2SDTJ-U04U46Q3CQZ-f1b4f383d0a2-512"
+        }
+    },
+    {
+        "model": "shutterbugapi.shutterbuguser",
+        "pk": 6,
+        "fields": {
+            "user": 6,
+            "bio": "My mouth is orange from all this gatorade",
+            "profile_image_url": "https://ca.slack-edge.com/T03F2SDTJ-U04S6PEQ6SF-4e1af1f26df8-512"
         }
     }
 ]

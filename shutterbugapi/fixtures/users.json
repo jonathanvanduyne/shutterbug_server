@@ -3,12 +3,12 @@
         "model": "auth.user",
         "pk": 1,
         "fields": {
-            "username": "daniel_reads_big_books",
-            "first_name": "Daniel",
-            "last_name": "Myers",
-            "email": "danielmyers@coldmail.com",
-            "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
-            "is_staff": false,
+            "username": "belle_gen_z_queen",
+            "first_name": "Belle",
+            "last_name": "Hollander",
+            "email": "bellehollander@hotmail.com",
+            "password": "pbkdf2_sha256$600000$fuOolowFuETCGib1JCGMnT$6n0HJOr5OA28JS+ZBIMbpkzWCQ4VcbcK/jpZnn3jSf8=",
+            "is_staff": true,
             "is_active": true,
             "last_login": null,
             "date_joined": "2020-08-28T14:51:39.989Z"
@@ -18,12 +18,72 @@
         "model": "auth.user",
         "pk": 2,
         "fields": {
-            "username": "belle_gen_z_queen",
-            "first_name": "Belle",
-            "last_name": "Hollander",
-            "email": "bellehollander@hotmail.com",
-            "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
+            "username": "Catz_not_dogs",
+            "first_name": "Cassie",
+            "last_name": "Revell",
+            "email": "cat_woman@spiderman.com",
+            "password": "pbkdf2_sha256$600000$fuOolowFuETCGib1JCGMnT$6n0HJOr5OA28JS+ZBIMbpkzWCQ4VcbcK/jpZnn3jSf8=",
             "is_staff": true,
+            "is_active": true,
+            "last_login": null,
+            "date_joined": "2020-08-28T14:51:39.989Z"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 3,
+        "fields": {
+            "username": "tea_leaves_and_sweet_potatoes",
+            "first_name": "Chesney",
+            "last_name": "Hardin",
+            "email": "lives_in_the_woods@axwarrior.com",
+            "password": "pbkdf2_sha256$600000$fuOolowFuETCGib1JCGMnT$6n0HJOr5OA28JS+ZBIMbpkzWCQ4VcbcK/jpZnn3jSf8=",
+            "is_staff": true,
+            "is_active": true,
+            "last_login": null,
+            "date_joined": "2020-08-28T14:51:39.989Z"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 4,
+        "fields": {
+            "username": "daniel_reads_big_books",
+            "first_name": "Daniel",
+            "last_name": "Myers",
+            "email": "danielmyers@coldmail.com",
+            "password": "pbkdf2_sha256$600000$fuOolowFuETCGib1JCGMnT$6n0HJOr5OA28JS+ZBIMbpkzWCQ4VcbcK/jpZnn3jSf8=",
+            "is_staff": false,
+            "is_active": true,
+            "last_login": null,
+            "date_joined": "2020-08-28T14:51:39.989Z"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 5,
+        "fields": {
+            "username": "The_Buckster",
+            "first_name": "Lance",
+            "last_name": "Buckley",
+            "email": "boardgamez4dayz@dungeonsanddragons.com",
+            "password": "pbkdf2_sha256$600000$fuOolowFuETCGib1JCGMnT$6n0HJOr5OA28JS+ZBIMbpkzWCQ4VcbcK/jpZnn3jSf8=",
+            "is_staff": false,
+            "is_active": true,
+            "last_login": null,
+            "date_joined": "2020-08-28T14:51:39.989Z"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 6,
+        "fields": {
+            "username": "@the_real_real_ryan_phillips",
+            "first_name": "Ryan",
+            "last_name": "Phillips",
+            "email": "orange_gatorade_4_dayz@drinkup.com",
+            "password": "pbkdf2_sha256$600000$fuOolowFuETCGib1JCGMnT$6n0HJOr5OA28JS+ZBIMbpkzWCQ4VcbcK/jpZnn3jSf8=",
+            "is_staff": false,
             "is_active": true,
             "last_login": null,
             "date_joined": "2020-08-28T14:51:39.989Z"
