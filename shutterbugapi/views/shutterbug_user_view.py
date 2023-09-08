@@ -57,6 +57,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 class ShutterbugUserSerializer(serializers.ModelSerializer):
     """JSON serializer for shutterbug users"""
+    
     user = UserSerializer(many=False)
 
     class Meta:

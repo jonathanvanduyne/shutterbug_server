@@ -14,6 +14,10 @@ class PostView(ViewSet):
         category = self.request.query_params.get('category', None)
         if category is not None:
             posts = posts.filter(category__id=category)
+
+        tag = self.request.query_params.get('tag', None)
+        if tag is not None:
+            posts = posts.filter(tags__id=tag)
         
         serializer = PostSerializer(posts, many=True, context={'request': request})
         return Response(serializer.data)
@@ -113,7 +117,7 @@ class TagSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Tag
-        fields = ('label',)
+        fields = ('id', 'label')
 
 class ReactionSerializer(serializers.ModelSerializer):
     """JSON serializer for reactions"""
