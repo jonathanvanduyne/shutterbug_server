@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from rest_framework import serializers, status
 from shutterbugapi.models import Post, Category, ShutterbugUser, PostTag, Tag, Comment, PostReaction, Reaction
 
+
 class PostView(ViewSet):
 
     def list(self, request):
@@ -18,24 +19,27 @@ class PostView(ViewSet):
         tag = self.request.query_params.get('tag', None)
         if tag is not None:
             posts = posts.filter(tags__id=tag)
-        
-        serializer = PostSerializer(posts, many=True, context={'request': request})
+
+        serializer = PostSerializer(
+            posts, many=True, context={'request': request})
         return Response(serializer.data)
-    
+
     def retrieve(self, request, pk):
         """Handle GET requests for single post"""
         post = Post.objects.get(pk=pk)
         serializer = PostSerializer(post)
         return Response(serializer.data)
-    
+
     def create(self, request):
         """Handle POST operations """
         try:
             # Get the user from the request's authentication
             user = ShutterbugUser.objects.get(user=request.auth.user)
-        
             # Get the category using the provided category ID
             category = Category.objects.get(pk=request.data["category"])
+            # Get the tags using the provided tag IDs
+            tags = Tag.objects.filter(pk__in=request.data["tags"])
+            # Get the published_on date
 
             # Create a new Post instance with the provided data
             post = Post.objects.create(
@@ -44,10 +48,10 @@ class PostView(ViewSet):
                 image_url=request.data["image_url"],
                 content=request.data["content"],
                 published_on=request.data["published_on"],
-                category=category,
-                approved=request.data["approved"],
-                flagged=request.data["flagged"]
+                category=category
             )
+
+            post.tags.set(tags)
 
             # Serialize the newly created post and return it with a 201 status
             serializer = PostSerializer(post)
@@ -69,10 +73,10 @@ class PostView(ViewSet):
             post.delete()
 
             return Response(None, status=status.HTTP_204_NO_CONTENT)
-        
+
         except Post.DoesNotExist as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
-        
+
     def update(self, request, pk):
         """Handle PUT requests for a post"""
         try:
@@ -104,6 +108,7 @@ class PostView(ViewSet):
         except Exception as ex:
             return Response({'message': str(ex)}, status=status.HTTP_400_BAD_REQUEST)
 
+
 class CategorySerializer(serializers.ModelSerializer):
     """JSON serializer for categories"""
 
@@ -119,6 +124,7 @@ class TagSerializer(serializers.ModelSerializer):
         model = Tag
         fields = ('id', 'label')
 
+
 class ReactionSerializer(serializers.ModelSerializer):
     """JSON serializer for reactions"""
 
@@ -131,10 +137,14 @@ class PostSerializer(serializers.ModelSerializer):
     """JSON serializer for posts"""
 
     # Define fields for User model properties
-    user_first_name = serializers.CharField(source='shutterbug_user.user.first_name', read_only=True)
-    user_last_name = serializers.CharField(source='shutterbug_user.user.last_name', read_only=True)
-    user_full_name = serializers.CharField(source='shutterbug_user.full_name', read_only=True)
-    user_email = serializers.EmailField(source='shutterbug_user.user.email', read_only=True)
+    user_first_name = serializers.CharField(
+        source='shutterbug_user.user.first_name', read_only=True)
+    user_last_name = serializers.CharField(
+        source='shutterbug_user.user.last_name', read_only=True)
+    user_full_name = serializers.CharField(
+        source='shutterbug_user.full_name', read_only=True)
+    user_email = serializers.EmailField(
+        source='shutterbug_user.user.email', read_only=True)
 
     category = CategorySerializer(many=False)
     tags = TagSerializer(many=True)
@@ -142,5 +152,6 @@ class PostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = ('id', 'shutterbug_user', 'user_first_name', 'user_last_name', 'user_full_name', 'user_email', 'title', 'image_url', 'content', 'published_on', 'category', 'tags', 'reactions', 'approved', 'flagged')
+        fields = ('id', 'shutterbug_user', 'user_first_name', 'user_last_name', 'user_full_name', 'user_email',
+                  'title', 'image_url', 'content', 'published_on', 'category', 'tags', 'reactions', 'approved', 'flagged')
         depth = 1
