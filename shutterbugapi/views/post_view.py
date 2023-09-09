@@ -47,7 +47,6 @@ class PostView(ViewSet):
                 title=request.data["title"],
                 image_url=request.data["image_url"],
                 content=request.data["content"],
-                published_on=request.data["published_on"],
                 category=category
             )
 
@@ -114,7 +113,7 @@ class CategorySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Category
-        fields = ('label',)
+        fields = ('id', 'label')
 
 
 class TagSerializer(serializers.ModelSerializer):
