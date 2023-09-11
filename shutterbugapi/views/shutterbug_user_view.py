@@ -41,7 +41,7 @@ class ShutterbugUserView(ViewSet):
             user.bio = request.data.get("bio", user.bio)  # Use get to keep the existing value if not provided
             user.profile_image_url = request.data.get("profile_image_url", user.profile_image_url)  # Use get to keep the existing value if not provided
             user.save()
-            return Response({}, status=status.HTTP_204_NO_CONTENT)
+            return Response(None, status=status.HTTP_204_NO_CONTENT)
 
         except ShutterbugUser.DoesNotExist:
             return Response({'message': 'User not found.'}, status=status.HTTP_404_NOT_FOUND)

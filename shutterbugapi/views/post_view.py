@@ -20,9 +20,14 @@ class PostView(ViewSet):
         if tag is not None:
             posts = posts.filter(tags__id=tag)
 
+        user = self.request.query_params.get('user', None)
+        if user is not None:
+            posts = posts.filter(shutterbug_user__id=user)
+
         serializer = PostSerializer(
             posts, many=True, context={'request': request})
         return Response(serializer.data)
+
 
     def retrieve(self, request, pk):
         """Handle GET requests for single post"""
