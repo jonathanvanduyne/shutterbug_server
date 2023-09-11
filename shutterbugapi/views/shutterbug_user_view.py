@@ -11,6 +11,10 @@ class ShutterbugUserView(ViewSet):
         """Handle GET requests to shutterbug users resource"""
         try:
             users = ShutterbugUser.objects.all()
+            
+            if "current" in request.query_params:
+                users = users.filter(user=request.auth.user)
+            
             serializer = ShutterbugUserSerializer(users, many=True, context={'request': request})
             return Response(serializer.data)
 
@@ -37,7 +41,7 @@ class ShutterbugUserView(ViewSet):
             user.bio = request.data.get("bio", user.bio)  # Use get to keep the existing value if not provided
             user.profile_image_url = request.data.get("profile_image_url", user.profile_image_url)  # Use get to keep the existing value if not provided
             user.save()
-            return Response({}, status=status.HTTP_204_NO_CONTENT)
+            return Response(None, status=status.HTTP_204_NO_CONTENT)
 
         except ShutterbugUser.DoesNotExist:
             return Response({'message': 'User not found.'}, status=status.HTTP_404_NOT_FOUND)
@@ -53,6 +57,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 class ShutterbugUserSerializer(serializers.ModelSerializer):
     """JSON serializer for shutterbug users"""
+    
     user = UserSerializer(many=False)
 
     class Meta:

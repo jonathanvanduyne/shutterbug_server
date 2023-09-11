@@ -30,5 +30,37 @@
             "post": 2,
             "tag": 4
         }
+    },
+    {
+        "model": "shutterbugapi.posttag",
+        "pk": 5,
+        "fields": {
+            "post": 3,
+            "tag": 5
+        }
+    },
+    {
+        "model": "shutterbugapi.posttag",
+        "pk": 6,
+        "fields": {
+            "post": 3,
+            "tag": 6
+        }
+    },
+    {
+        "model": "shutterbugapi.posttag",
+        "pk": 7,
+        "fields": {
+            "post": 4,
+            "tag": 7
+        }
+    },
+    {
+        "model": "shutterbugapi.posttag",
+        "pk": 8,
+        "fields": {
+            "post": 4,
+            "tag": 8
+        }
     }
 ]
