@@ -24,6 +24,14 @@ class PostView(ViewSet):
         if user is not None:
             posts = posts.filter(shutterbug_user__id=user)
 
+        flagged = self.request.query_params.get('flagged', None)
+        if flagged is not None:
+            posts = posts.filter(flagged=True)
+
+        unaaproved = self.request.query_params.get('unapproved', None)
+        if unaaproved is not None:
+            posts = posts.filter(approved=False)
+
         serializer = PostSerializer(
             posts, many=True, context={'request': request})
         return Response(serializer.data)
@@ -84,7 +92,7 @@ class PostView(ViewSet):
     def update(self, request, pk):
         """Handle PUT requests for a post"""
         try:
-            user = ShutterbugUser.objects.get(user=request.auth.user)
+            user = ShutterbugUser.objects.get(pk=request.data["shutterbug_user"])
             category = Category.objects.get(pk=request.data["category"])
 
             post = Post.objects.get(pk=pk)
@@ -149,6 +157,8 @@ class PostSerializer(serializers.ModelSerializer):
         source='shutterbug_user.full_name', read_only=True)
     user_email = serializers.EmailField(
         source='shutterbug_user.user.email', read_only=True)
+    user_is_active = serializers.BooleanField(
+        source='shutterbug_user.user.is_active', read_only=True)
 
     category = CategorySerializer(many=False)
     tags = TagSerializer(many=True)
@@ -156,6 +166,6 @@ class PostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = ('id', 'shutterbug_user', 'user_first_name', 'user_last_name', 'user_full_name', 'user_email',
+        fields = ('id', 'shutterbug_user', 'user_first_name', 'user_last_name', 'user_full_name', 'user_email', 'user_is_active',
                   'title', 'image_url', 'content', 'published_on', 'category', 'tags', 'reactions', 'approved', 'flagged')
         depth = 1
