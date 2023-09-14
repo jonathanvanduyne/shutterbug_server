@@ -28,8 +28,8 @@ class PostView(ViewSet):
         if flagged is not None:
             posts = posts.filter(flagged=True)
 
-        unaaproved = self.request.query_params.get('unapproved', None)
-        if unaaproved is not None:
+        approved = self.request.query_params.get('approved', None)
+        if approved is not None:
             posts = posts.filter(approved=False)
 
         serializer = PostSerializer(
