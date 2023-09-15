@@ -13,4 +13,5 @@ python3 manage.py loaddata post_tags
 python3 manage.py loaddata reactions
 python3 manage.py loaddata post_reactions
 python3 manage.py loaddata comments
+python3 manage.py loaddata direct_messages
 

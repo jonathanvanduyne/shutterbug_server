@@ -1,0 +1,98 @@
+[
+    {
+        "model": "shutterbugapi.directmessage",
+        "pk": 1,
+        "fields": {
+            "sender": 6,
+            "recipient": 1,
+            "content": "Sometimes I Think I'm Just A Riddle That I Can't Even Solve.",
+            "created_on": "2020-08-05T14:48:00Z",
+            "is_read": false,
+            "is_deleted": false
+        }
+    },
+    {
+        "model": "shutterbugapi.directmessage",
+        "pk": 2,
+        "fields": {
+            "sender": 5,
+            "recipient": 1,
+            "content": "You gave me a cookie, I got you a cookie.",
+            "created_on": "2020-08-05T14:49:00Z",
+            "is_read": false,
+            "is_deleted": false
+        }
+    },
+    {
+        "model": "shutterbugapi.directmessage",
+        "pk": 3,
+        "fields": {
+            "sender": 4,
+            "recipient": 1,
+            "content": "Pine has no place in this loft. It's the wood of poor people and outhouses.",
+            "created_on": "2020-08-05T14:48:00Z",
+            "is_read": false,
+            "is_deleted": false
+        }
+    },
+    {
+        "model": "shutterbugapi.directmessage",
+        "pk": 4,
+        "fields": {
+            "sender": 3,
+            "recipient": 1,
+            "content": "I am not a successful adult. I don't eat vegetables and/or take care of myself.",
+            "created_on": "2020-08-05T14:49:00Z",
+            "is_read": false,
+            "is_deleted": false
+        }
+    },
+    {
+        "model": "shutterbugapi.directmessage",
+        "pk": 5,
+        "fields": {
+            "sender": 2,
+            "recipient": 1,
+            "content": "The Economy Stinks, Bees Are Dying, And Movies Are Pretty Much All Sequels Now",
+            "created_on": "2020-08-05T14:48:00Z",
+            "is_read": false,
+            "is_deleted": false
+        }
+    },
+    {
+        "model": "shutterbugapi.directmessage",
+        "pk": 6,
+        "fields": {
+            "sender": 4,
+            "recipient": 1,
+            "content": "I'd Give You A Hug, But My Shirt Smells Pretty Weird Today",
+            "created_on": "2020-08-05T14:49:00Z",
+            "is_read": false,
+            "is_deleted": false
+        }
+    },
+    {
+        "model": "shutterbugapi.directmessage",
+        "pk": 7,
+        "fields": {
+            "sender": 1,
+            "recipient": 6,
+            "content": "If I were off my rocker, would I take a weekly selfie with my cat?",
+            "created_on": "2020-08-05T14:48:00Z",
+            "is_read": false,
+            "is_deleted": false
+        }
+    },
+    {
+        "model": "shutterbugapi.directmessage",
+        "pk": 8,
+        "fields": {
+            "sender": 2,
+            "recipient": 6,
+            "content": "I just wanted to listen to Taylor Swift alone",
+            "created_on": "2020-08-05T14:48:00Z",
+            "is_read": false,
+            "is_deleted": false
+        }
+    }
+]

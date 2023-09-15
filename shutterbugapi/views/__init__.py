@@ -5,3 +5,4 @@ from .comment_view import CommentView
 from .category_view import CategoryView
 from .tag_view import TagView
 from .auth_user_view import DjangoUserView
+from .direct_messages_view import DirectMessageView

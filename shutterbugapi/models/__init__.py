@@ -6,3 +6,4 @@ from .post import Post
 from .reaction import Reaction
 from .shutterbug_user import ShutterbugUser
 from .tag import Tag
+from .direct_message import DirectMessage
