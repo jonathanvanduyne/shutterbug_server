@@ -31,17 +31,13 @@ class CommentView(ViewSet):
             user = ShutterbugUser.objects.get(user=request.auth.user)
 
             # Get the post using the provided post ID
-            post_id = request.data.get("post")
-            post = Post.objects.get(pk=post_id)
+            post = Post.objects.get(pk=request.data["post"])
 
             # Create a new Comment instance with the provided data
             comment = Comment.objects.create(
                 shutterbug_user=user,
                 post=post,
                 content=request.data["content"],
-                published_on=request.data["published_on"],
-                approved=request.data.get("approved", True),
-                flagged=request.data.get("flagged", False)
             )
 
             # Serialize the newly created comment and return it with a 201 status

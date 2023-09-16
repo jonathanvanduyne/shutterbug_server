@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
-from shutterbugapi.views import PostView, ShutterbugUserView, CommentView, CategoryView, TagView, DjangoUserView
+from shutterbugapi.views import PostView, ShutterbugUserView, CommentView, CategoryView, TagView, DjangoUserView, DirectMessageView
 from shutterbugapi.views import login_user, register_user
 
 router = routers.DefaultRouter(trailing_slash=False)
@@ -27,6 +27,7 @@ router.register(r'comments', CommentView, 'comment')
 router.register(r'categories', CategoryView, 'category')
 router.register(r'tags', TagView, 'tag')
 router.register(r'django_users', DjangoUserView, 'shutterbuguser')
+router.register(r'direct_messages', DirectMessageView, 'direct_message')
 
 urlpatterns = [
     path('', include(router.urls)),
