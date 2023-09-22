@@ -26,8 +26,8 @@ class DirectMessageView(ViewSet):
         try:
             # Get the user from the request's authentication
             sender = ShutterbugUser.objects.get(user=request.auth.user)
-            # Get the category using the provided category ID
-            recipient = ShutterbugUser.objects.get(pk=request.data["recipient"])
+
+            recipient = ShutterbugUser.objects.get(pk=request.data["recipient_id"])
 
             # Create a new Post instance with the provided data
             direct_message = DirectMessage.objects.create(
